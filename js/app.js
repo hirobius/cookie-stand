@@ -1,119 +1,82 @@
 'use strict';
 
-var score = 0;
 
-var username = prompt('Hello. What\'s your name?');
-alert('Welcome, ' + username + ', to my life.');
 
-function questionOne() {
-  var quizOne = prompt('Do I like dogs?').toUpperCase();
-  if (quizOne === 'YES' || quizOne === 'Y') {
-    alert('Well done.');
-    score++;
-  } else if (quizOne === 'NO' || quizOne === 'N') {
-    alert('Incorrect.');
-  } else {
-    alert('Ok, that doesn\'t make sense.');
-  }
-}
-questionOne();
+let myContainer = document.getElementById('Container');
 
-function questionTwo() {
-  var quizTwo = prompt('Do I like piña coladas?').toUpperCase();
-  if (quizTwo === 'YES' || quizTwo === 'Y') {
-    alert('Not really');
-    score++;
-  } else if (quizTwo === 'NO' || quizTwo === 'N') {
-    alert('Correct.');
-  } else {
-    alert('Umm...');
-  }
-}
-questionTwo();
+// Pat’s Salmon Cookies, soon with franchises internationally, needs to calculate the number of cookies each location must make every day so that it can manage its supplies inventory and baking schedule. The number of cookies to make depends on the hours of operation (6:00 AM to 8:00 PM for all locations) and a few factors unique to each location:
 
-function questionThree() {
-  var quizThree = prompt('Do I prefer electric razors?').toUpperCase();
-  if (quizThree === 'YES' || quizThree === 'Y') {
-    alert('Totally, if I watch a good review beforehand.');
-    score++;
-  } else if (quizThree === 'NO' || quizThree === 'N') {
-    alert('I actually do, but with other things I\'m more on the analog side of life.');
-  } else {
-    alert('I mean...');
-  }
-}
-questionThree();
+// The minimum number of customers per hour.
+// The maximum number of customers per hour.
+// The average number of cookies purchased per customer.
 
-function questionFour() {
-  var quizFour = prompt('Am I a gamer?').toUpperCase();
-  if (quizFour === 'YES' || quizFour === 'Y') {
-    alert('+10,000 EXP');
-    score++;
-  } else if (quizFour === 'NO' || quizFour === 'N') {
-    alert('Dude. Get with it.');
-  } else {
-    alert('Moving on..');
-  }
-}
-questionFour();
+// ------------------
 
-function questionFive() {
-  var quizFive = prompt('Am I into politics?').toUpperCase();
-  if (quizFive === 'YES' || quizFive === 'Y') {
-    alert('Unfortunate, ' + username + '.');
-    score++;
-  } else if (quizFive === 'NO' || quizFive === 'N') {
-    alert('Unfortunate, ' + username + '.');
-  } else {
-    alert('Unfortunate, ' + username + '.');
-  }
-}
-questionFive();
+// Within your javascript file (example: app.js), create separate JS object literals for each shop location that outputs the following to the sales.html file:
 
-function questionSix() {
-  for (var i = 0; i < 4; i++) {
-    var fingers = 7;
-    var guessCounter = 4;
-    var fingerQuestion = 'How many fingers am I holding up?';
-    var guessFingers = +prompt(fingerQuestion + ` You have ${guessCounter - i} guesses remaining.`);
-    if (guessFingers === fingers) {
-      alert('Excellent.');
-      score++;
-      break;
-    } else if (i === 2) {
-      alert('Last guess.');
-    } else if (i < 3 && guessFingers < fingers) {
-      alert('Higher...');
-    } else if (i < 3 && guessFingers > fingers) {
-      alert('Lower...');
+
+
+
+
+// Store the results for each location in a separate array… perhaps as a property of the object representing that location
+
+// Display the values of each array as unordered lists in the browser
+// Calculating the sum of these hourly totals; your output for each location should look like this:
+
+
+
+
+
+// get each store element by id.
+
+const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+let seattle = {
+  name: 'Seattle',
+  // Stores the min/max hourly customers
+  minHourlyCustomers: 23,
+  maxHourlyCustomers: 65,
+  // The average number of cookies purchased per customer
+  avgCookiesPurchasedPerCustomer: 6.3,
+  // will hold the calculated number of cookies sold each hok,ur
+  cookiesSoldHourlyArray: [],
+  // will hold the calculated number of cookies sold in the store all day long
+  dailyTotal: 0,
+  // A method to generate a random number of customers per hour.
+  randomCustomersPerHour: function () {
+    console.log('I\'m in randomCustomersPerHour');
+    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
+  },
+  // A method to calculate and populate our number of cookies sold per hour
+  calcCookiesSoldHourly: function () {
+    let randomCookiesSoldHourly = this.randomCustomersPerHour();
+    console.log(randomCookiesSoldHourly);
+    console.log(this.cookiesSoldHourlyArray);
+    console.log('I\'m in calcCookiesSoldHourly');
+    // do something, maybe use a for loop counter
+    for (var i = 0; i < hours.length; i++) {
+      this.cookiesSoldHourlyArray.push(randomCookiesSoldHourly * this.avgCookiesPurchasedPerCustomer);
     }
+  },
+
+  // Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
+
+  // a method to render the list items.
+  render: function () {
+    // do something
+    this.calcCookiesSoldHourly();
+    console.log('I\'m inside render method');
+  },
+};
+seattle.render();
+
+// function that puts the indexes of both arrays together
+function cookieCounter() {
+  for (var i = 0; i < hours.length; i++) {
+    let cookieCount = (`${hours.push} : ${seattle.cookiesSoldHourlyArray.push}`);
+    console.log(hours, seattle.cookiesSoldHourlyArray);
+    console.log(cookieCount);
+    return;
   }
 }
-questionSix();
-alert('The correct answer was 7.');
-
-function questionSeven() {
-  var colors = ['WHITE', 'BLUE', 'BLACK', 'RED', 'GREEN', 'YELLOW', 'PURPLE'];
-  var guessCounter = 6;
-  var correctAnswer = false;
-  for (var i = 0; i < guessCounter; i++) {
-    var guess = prompt(`Name one of my favorite colors. ${guessCounter - i} guesses remaining.`).toUpperCase();
-    for (var j = 0; j < colors.length; j++) {
-      if (guess === colors[j]) {
-        alert('Good job!');
-        score++;
-        correctAnswer = true;
-        break;
-      }
-    }
-    if (correctAnswer) {
-      break;
-    } else {
-      alert('Incorrect. Please try again.');
-    }
-  }
-}
-questionSeven();
-
-alert('My favorite colors are WHITE, BLUE, BLACK, RED, GREEN, YELLOW and PURPLE.');
-alert('Your final score is: ' + score + '/7.');
+cookieCounter();
