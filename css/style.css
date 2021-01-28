@@ -1,0 +1,27 @@
+body {
+  color:green;
+  background-color: aliceblue;
+  width: 960px;
+  margin: auto;
+}
+/* 
+p {
+	line-height: 1.25; 
+}
+
+ol, ul {
+  list-style-position: inside;
+  padding-bottom: 2em;
+	line-height: 1.25; 
+}
+
+h1 {
+  font-size: 280px;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-style: normal;
+  font-weight: 900;
+} */
