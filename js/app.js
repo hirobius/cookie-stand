@@ -23,7 +23,8 @@ let seattle = {
   //a method to calculate a random number of customers per hour
   randomCustomerPerHour: function () {
     // do something
-    return Math.console.log('I\'m in randomCustomerPerHour');
+    return Math.floor(Math.random() * (this.maxCookiesSoldEachHour - this.minCookiesSoldEachHour + 1) + this.minCookiesSoldEachHour),
+    console.log('I\'m in randomCustomerPerHour');
   },
   // a method to calculate and populate our number of cookies sold per hour
   calcCookiesSoldEachHour: function () {
