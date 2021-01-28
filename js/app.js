@@ -1,119 +1,41 @@
 'use strict';
 
-var score = 0;
+// get each store element by id
 
-var username = prompt('Hello. What\'s your name?');
-alert('Welcome, ' + username + ', to my life.');
+const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm',];
 
-function questionOne() {
-  var quizOne = prompt('Do I like dogs?').toUpperCase();
-  if (quizOne === 'YES' || quizOne === 'Y') {
-    alert('Well done.');
-    score++;
-  } else if (quizOne === 'NO' || quizOne === 'N') {
-    alert('Incorrect.');
-  } else {
-    alert('Ok, that doesn\'t make sense.');
-  }
+function randomCustomerPerHour() {
+  // get random customers per hour
 }
-questionOne();
 
-function questionTwo() {
-  var quizTwo = prompt('Do I like piña coladas?').toUpperCase();
-  if (quizTwo === 'YES' || quizTwo === 'Y') {
-    alert('Not really');
-    score++;
-  } else if (quizTwo === 'NO' || quizTwo === 'N') {
-    alert('Correct.');
-  } else {
-    alert('Umm...');
-  }
-}
-questionTwo();
-
-function questionThree() {
-  var quizThree = prompt('Do I prefer electric razors?').toUpperCase();
-  if (quizThree === 'YES' || quizThree === 'Y') {
-    alert('Totally, if I watch a good review beforehand.');
-    score++;
-  } else if (quizThree === 'NO' || quizThree === 'N') {
-    alert('I actually do, but with other things I\'m more on the analog side of life.');
-  } else {
-    alert('I mean...');
-  }
-}
-questionThree();
-
-function questionFour() {
-  var quizFour = prompt('Am I a gamer?').toUpperCase();
-  if (quizFour === 'YES' || quizFour === 'Y') {
-    alert('+10,000 EXP');
-    score++;
-  } else if (quizFour === 'NO' || quizFour === 'N') {
-    alert('Dude. Get with it.');
-  } else {
-    alert('Moving on..');
-  }
-}
-questionFour();
-
-function questionFive() {
-  var quizFive = prompt('Am I into politics?').toUpperCase();
-  if (quizFive === 'YES' || quizFive === 'Y') {
-    alert('Unfortunate, ' + username + '.');
-    score++;
-  } else if (quizFive === 'NO' || quizFive === 'N') {
-    alert('Unfortunate, ' + username + '.');
-  } else {
-    alert('Unfortunate, ' + username + '.');
-  }
-}
-questionFive();
-
-function questionSix() {
-  for (var i = 0; i < 4; i++) {
-    var fingers = 7;
-    var guessCounter = 4;
-    var fingerQuestion = 'How many fingers am I holding up?';
-    var guessFingers = +prompt(fingerQuestion + ` You have ${guessCounter - i} guesses remaining.`);
-    if (guessFingers === fingers) {
-      alert('Excellent.');
-      score++;
-      break;
-    } else if (i === 2) {
-      alert('Last guess.');
-    } else if (i < 3 && guessFingers < fingers) {
-      alert('Higher...');
-    } else if (i < 3 && guessFingers > fingers) {
-      alert('Lower...');
-    }
-  }
-}
-questionSix();
-alert('The correct answer was 7.');
-
-function questionSeven() {
-  var colors = ['WHITE', 'BLUE', 'BLACK', 'RED', 'GREEN', 'YELLOW', 'PURPLE'];
-  var guessCounter = 6;
-  var correctAnswer = false;
-  for (var i = 0; i < guessCounter; i++) {
-    var guess = prompt(`Name one of my favorite colors. ${guessCounter - i} guesses remaining.`).toUpperCase();
-    for (var j = 0; j < colors.length; j++) {
-      if (guess === colors[j]) {
-        alert('Good job!');
-        score++;
-        correctAnswer = true;
-        break;
-      }
-    }
-    if (correctAnswer) {
-      break;
-    } else {
-      alert('Incorrect. Please try again.');
-    }
-  }
-}
-questionSeven();
-
-alert('My favorite colors are WHITE, BLUE, BLACK, RED, GREEN, YELLOW and PURPLE.');
-alert('Your final score is: ' + score + '/7.');
+let seattle = {
+  name: 'Seattle',
+  // the minimum number of customers per hour.
+  minCookiesSoldEachHour: 23,
+  // the maximum number of customers per hour
+  maxCookiesSoldEachHour: 65,
+  // The average number of cookies purchased per customer
+  avgCookiesSoldPerCustomer: 6.3,
+  // will hold the calculated number of cookies sold each hour
+  cookiesSoldPerHourArray: [],
+  // will hold the calculated number of cookies sold in the store all day long
+  dailyTotal: 0,
+  //a method to calculate a random number of customers per hour
+  randomCustomerPerHour: function () {
+    // do something
+    return Math.console.log('I\'m in randomCustomerPerHour');
+  },
+  // a method to calculate and populate our number of cookies sold per hour
+  calcCookiesSoldEachHour: function () {
+    this.randomCustomerPerHour();
+    console.log('I\'m in calcCookiesSoldEachHour');
+    // do something, maybe use a for loop counter
+  },
+  // a method to render the list items.
+  render: function () {
+    // do something
+    this.calcCookiesSoldEachHour();
+    console.log('I\'m inside render method');
+  },
+};
+seattle.render();
