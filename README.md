@@ -11,3 +11,5 @@ Here lives an application that calculates daily sales projections of "Salmon Coo
 
 
 ### Reflections and Comments
+
+<!-- option+shift + any character does some cool stuff when typing :) -->
