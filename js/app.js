@@ -3,10 +3,10 @@
 // Within your javascript file create separate JS object literals for each shop location that outputs to the sales.html file
 // Store the results for each location in a separate array… perhaps as a property of the object representing that location
 let seattleList = document.getElementById('seattle');
-// let tokyoList = document.getElementById('tokyo');
-// let dubaiList = document.getElementById('dubai');
-// let parisList = document.getElementById('paris');
-// let limaList = document.getElementById('lima');
+let tokyoList = document.getElementById('tokyo');
+let dubaiList = document.getElementById('dubai');
+let parisList = document.getElementById('paris');
+let limaList = document.getElementById('lima');
 
 // get each store element by id.
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
@@ -36,27 +36,36 @@ function Store (name, min, max, avg) {
       this.hourlyCookies.push(hourlyTotal);
       this.dailyTotal += hourlyTotal;
     }
-  },
-  this.render = function () {
-    this.calcCookiesSoldHourly();
-    for (let i = 0; i < hours.length; i++) {
-      // append it to the DOM
-      let li = document.createElement('li');
-      li.textContent = `${hours[i]}: ${this.hourlyCookies[i]} cookies`;
-      seattleList.appendChild(li);
-    }
-    let li = document.createElement('li');
-    li.textContent = `Total: ${this.dailyTotal} cookies`;
-    seattleList.appendChild(li);
   };
 }
 
+Store.prototype.render = function () {
+  this.calcCookiesSoldHourly();
+  for (let i = 0; i < hours.length; i++) {
+    // append it to the DOM
+    let li = document.createElement('li');
+    li.textContent = `${hours[i]}: ${this.hourlyCookies[i]} cookies`;
+    seattleList.appendChild(li);
+  }
+  let li = document.createElement('li');
+  li.textContent = `Total: ${this.dailyTotal} cookies`;
+  seattleList.appendChild(li);
+};
+
+
+
+
 let seattle = new Store('Seattle', 23, 65, 6.3);
+let tokyo = new Store('Tokyo', 3, 24, 1.2);
+let dubai = new Store('Dubai', 11, 38, 3.7);
+let paris = new Store('Paris', 20, 38, 2.3);
+let lima = new Store('Lima', 2, 16, 4.6);
+
 seattle.render();
-
-
-
-
+tokyo.render();
+dubai.render();
+paris.render();
+lima.render();
 
 
 // let seattle = {
@@ -259,10 +268,5 @@ seattle.render();
 //   }
 // };
 
-// seattle.render();
-// tokyo.render();
-// dubai.render();
-// paris.render();
-// lima.render();
 
 
