@@ -43,31 +43,30 @@ Store.prototype.render = function () {
   this.calcCookiesSoldHourly();
   let th = document.createElement('th');
   th.textContent = this.name;
+  let tr = document.createElement('tr');
+  cookieTable.appendChild(tr);
+
+
+
+  // end of night... about 2:12:42 from lecture, rewind a few min...
+  // https://frontrowviews.com/Home/Event/Play/5fea2e88e984682d9cb8f233#
+  tr.appendChild(th);
+
+
+
+  let td = document.createElement('td');
+  td.textContent = `${hours[i]}: ${this.hourlyCookies[i]} hourly cookies`;
+  let h3 = document.createElement('h3');
+  h3.textContent = this.name;
+  seattleList.appendChild(td);
   for (let i = 0; i < hours.length; i++) {
     // append it to the DOM
-    let tr = document.createElement('tr');
-    cookieTable.appendChild(tr);
-
-
-
-
-    // end of night... about 2:12:42 from lecture, rewind a few min...
-    // https://frontrowviews.com/Home/Event/Play/5fea2e88e984682d9cb8f233#
-    tr.appendChild(th);
-
-
-
+    // this is creating the list item bullet point:
     let td = document.createElement('td');
-    td.textContent = `${hours[i]}: ${this.hourlyCookies[i]} hourly cookies`;
-    let h3 = document.createElement('h3');
-    h3.textContent = this.name;
-    seattleList.appendChild(td);
+    td.textContent = `Total: ${this.dailyTotal} cookies`;
+    tr.appendChild(td);
   }
 
-  // this is creating the list item bullet point:
-  let td = document.createElement('td');
-  td.textContent = `Total: ${this.dailyTotal} cookies`;
-  cookieTable.appendChild(td);
 };
 
 let seattle = new Store('Seattle', 23, 65, 6.3);
