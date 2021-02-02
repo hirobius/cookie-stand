@@ -13,3 +13,5 @@ Here lives an application that calculates daily sales projections of "Salmon Coo
 ### Reflections and Comments
 
 <!-- option+shift + any character does some cool stuff when typing :) -->
+
+Create an element, give it content, append it to the DOM, rinse, repeat.

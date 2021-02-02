@@ -36,37 +36,22 @@ Store.prototype.render = function () {
   // this following line is responsible for continuing the tether / math from above
   this.calcHourlyCookies();
   let tr = document.createElement('tr');
-  cookieTable.appendChild(tr);
   let th = document.createElement('th');
   th.textContent = this.name;
-
-  // create an element, give it content, append it to the DOM, rinse, repeat
+  cookieTable.appendChild(tr);
   tr.appendChild(th);
 
   for (let i = 0; i < this.hourlyCookies.length; i++) {
-    // append it to the DOM
-    // this is creating the list item bullet point:
     let td = document.createElement('td');
     td.textContent = this.hourlyCookies[i];
-    // td.textContent = `Total: ${this.dailyTotal} cookies`;
     tr.appendChild(td);
   }
-
 
   let td = document.createElement('td');
   td.textContent = this.dailyTotal;
   tr.appendChild(td);
-  cookieTable.appendChild(tr);
-
-  // end of night... about 2:12:42 from lecture, rewind a few min...
-  // https://frontrowviews.com/Home/Event/Play/5fea2e88e984682d9cb8f233#
 };
 
-
-
-
-// executable code
-// instantiations - Objects are created with "Store" Constructor
 let seattle = new Store('Seattle', 23, 65, 6.3);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);
 let dubai = new Store('Dubai', 11, 38, 3.7);
