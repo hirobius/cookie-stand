@@ -30,6 +30,7 @@ Store.prototype.calcHourlyCookies = function () {
   }
 };
 
+// A method to render the body rows of the table
 Store.prototype.render = function () {
   this.calcHourlyCookies();
   let tr = document.createElement('tr');
