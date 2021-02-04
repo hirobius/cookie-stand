@@ -1,15 +1,60 @@
+/* CSS HEX */
+
+/* --corn: #e7e247ff;
+--black-olive: #3d3b30ff;
+--independence: #4d5061ff;
+--glaucous: #5c80bcff;
+--alabaster: #e9eddeff; */
+
 body {
-  color: lightseagreen;
-  background-color: aliceblue;
+  background-color: #E9EDDE;
   width: 960px;
   margin: auto;
-  font-family: 'Libre Franklin', sans-serif;
+}
+
+img {
+  margin: 60px;
+}
+
+section {
+  padding-top: 30px;
+}
+
+section a {
+  background-color: cadetblue;
+  padding: 4px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  margin: auto;
+}
+
+div img {
+  margin: auto;
 }
 
 header {
   width: 100%;
   background-color: lightseagreen;
   height: 100px;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 200%;
+  color: #5C80BC;
+  font-weight: 700;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #5C80BC;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #3D3B30;
 }
 
 footer {
@@ -25,27 +70,37 @@ nav {
   width: 960px;
 }
 
-
-
 button {
   width: 320px;
 }
 
-
-
 table {
-  border-radius:6px;
+  border-radius: 6px;
   margin: auto;
   border-collapse: separate;
   border-left: 0;
   border-spacing: 0px;
 }
 
-table th, td {
-  border: 3px solid slateblue;
-  padding: 5px 4px 6px 4px; 
-  text-align: left;
+table td {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  border: 2px solid #3D3B30;
+  padding: 5px 4px 6px 4px;
+  text-align: center;
   vertical-align: top;
-  border-radius: 8px;
+  border-radius: 4px;
+  background-color: #5C80BC;
+  font-size: 80%;
 }
 
+table th {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  border: 2px solid #3D3B30;
+  padding: 5px 4px 6px 4px;
+  text-align: center;
+  vertical-align: top;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
