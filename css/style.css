@@ -1,51 +1,171 @@
+/* CSS HEX */
+
+/* --corn: #e7e247ff;
+--black-olive: #3d3b30ff;
+--independence: #4d5061ff;
+--glaucous: #5c80bcff;
+--alabaster: #e9eddeff; */
+
 body {
-  color: lightseagreen;
-  background-color: aliceblue;
+  background-color: #E9EDDE;
   width: 960px;
   margin: auto;
-  font-family: 'Libre Franklin', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 250%;
+  color: #5C80BC;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 header {
-  width: 100%;
-  background-color: lightseagreen;
-  height: 100px;
+  height: 360px;
 }
 
-footer {
-  width: 100%;
-  height: 200px;
+header img {
+  margin: 10px 60px;
+}
+
+section {
+  padding-top: 30px;
+}
+
+section div {
+  margin: auto;
+}
+
+section a {
+  background-color: #5c80bcff;
+  padding: 4px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 150%;
+  margin: auto;
+}
+
+section a:hover {
+  background-color: #e7e247ff;
+  color: #3d3b30ff;
+  font-style: italic;
+  transition: 350ms;
 }
 
 main {
   width: 960px;
+  margin-top: 80px;
+  position: relative;
+}
+
+article {
+  height: 180px;
+  width: 300px;
+  float: left;
+  background-color: #ffffff;
+  margin: 10px;
+  border-radius: 6px;
+}
+
+article h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 150%;
+  color: black;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+article h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #5C80BC;
+  text-align: center;
+  letter-spacing: 0px;
+  margin-bottom: 10px;
+}
+
+article p {
+  margin-left: 10px;
+  line-height: 125%;
+  text-align: left;
+  font-size: 80%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #3D3B30;
+}
+
+p2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #3D3B30;
+  line-height: 125%;
+  text-align: center;
+  font-size: 80%;
+}
+
+article img {
+  width: 80px;
+  margin: 10px;
+  float: left;
+}
+
+article div {
+  height: 1px;
+  background-color: rgb(214, 214, 214);
+  margin: 16px 10px 16px 10px;
+  display: block;
+}
+
+div img {
+  margin: auto;
+  position: relative;
+}
+
+main {
+  width: 960px;
+  height: 480px;
 }
 
 nav {
   width: 960px;
 }
 
-
-
-button {
-  width: 320px;
+footer {
+  height: 40px;
+  width: 100%;
 }
 
-
-
 table {
-  border-radius:6px;
   margin: auto;
   border-collapse: separate;
   border-left: 0;
-  border-spacing: 0px;
+  border-spacing: 4px;
 }
 
-table th, td {
-  border: 3px solid slateblue;
-  padding: 5px 4px 6px 4px; 
-  text-align: left;
-  vertical-align: top;
-  border-radius: 8px;
+table td {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #5C80BC;
+  border: 2px solid #5C80BC;
+  padding: 5px;
+  text-align: center;
+  background-color: #ffffff;
+  font-size: 100%;
+  border-radius: 4px;
 }
 
+table th {
+  font-family: 'Poppins', sans-serif;
+  color: #5C80BC;
+  font-weight: 700;
+  border: 2px solid #5C80BC;
+  padding: 5px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 4px;
+}

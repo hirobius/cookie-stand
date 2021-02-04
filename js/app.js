@@ -73,6 +73,21 @@ function renderFooter() {
   footer.appendChild(th);
 }
 
+
+// let nums = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+
+// for (let i = 0; i < hours.length; i++) {
+//   let sum = 0;
+//   for (let j = 0; j < nums[i].length; j++) {
+//     sum += nums[i][j];
+//   }
+//   this.hourlyTotal.push(sum);
+// }
+
 let seattle = new Store('Seattle', 23, 65, 6.3);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);
 let dubai = new Store('Dubai', 11, 38, 3.7);
