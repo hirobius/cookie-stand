@@ -63,7 +63,7 @@ function renderHeader() {
 
 // Help from TA Bryant for Lab 7 stretch goal
 function getGrandTotal() {
-  const grandTotal = new Array(hours.length + 1);
+  let grandTotal = new Array(hours.length + 1);
   grandTotal.fill(0);
   for (let i = 0; i < allStores.length; i++) {
     for (let j = 0; j < allStores[i].hourlyCookies.length; j++) {
@@ -76,31 +76,15 @@ function getGrandTotal() {
 
 function renderFooter() {
   let grandTotal = getGrandTotal();
-  let tr = document.createElement('tr');
   let th = document.createElement('th');
   th.textContent = 'Totals';
-  tr.appendChild(th);
+  footer.appendChild(th);
   for (let i = 0; i < grandTotal.length; i++) {
     let td = document.createElement('td');
     td.textContent = grandTotal[i];
-    tr.appendChild(td);
+    footer.appendChild(td);
   }
-  footer.appendChild(tr);
 }
-
-// let nums = [
-//   [1, 2, 3],
-//   [4, 5, 6],
-//   [7, 8, 9]
-// ];
-
-// for (let i = 0; i < hours.length; i++) {
-//   let sum = 0;
-//   for (let j = 0; j < nums[i].length; j++) {
-//     sum += nums[i][j];
-//   }
-//   this.hourlyTotal.push(sum);
-// }
 
 let seattle = new Store('Seattle', 23, 65, 6.3);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);

@@ -144,7 +144,6 @@ footer {
 
 table {
   margin: auto;
-  border-collapse: separate;
   border-left: 0;
   border-spacing: 4px;
 }
@@ -169,4 +168,5 @@ table th {
   text-align: center;
   background-color: #ffffff;
   border-radius: 4px;
+  width: max-content;
 }
