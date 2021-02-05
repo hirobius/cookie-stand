@@ -31,12 +31,12 @@ header img {
   margin: 10px 60px;
 }
 
-section {
-  padding-top: 30px;
-}
-
 section div {
   margin: auto;
+}
+
+section {
+  padding-top: 30px;
 }
 
 section a {
@@ -80,6 +80,7 @@ article h2 {
   text-align: left;
   margin-top: 18px;
   margin-bottom: 10px;
+  position: relative;
 }
 
 article h3 {
@@ -110,7 +111,7 @@ p2 {
 }
 
 article img {
-  width: 80px;
+  height: 30px;
   margin: 10px;
   float: left;
 }
@@ -143,7 +144,6 @@ footer {
 
 table {
   margin: auto;
-  border-collapse: separate;
   border-left: 0;
   border-spacing: 4px;
 }
@@ -168,4 +168,5 @@ table th {
   text-align: center;
   background-color: #ffffff;
   border-radius: 4px;
+  width: max-content;
 }
