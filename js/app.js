@@ -1,5 +1,7 @@
 'use strict';
 
+let header = document.getElementById('cookie-header');
+let footer = document.getElementById('cookie-footer');
 let cookieTable = document.getElementById('cookie-table');
 let allStores = [];
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
@@ -38,7 +40,6 @@ Store.prototype.render = function () {
   th.textContent = this.name;
   cookieTable.appendChild(tr);
   tr.appendChild(th);
-
   for (let i = 0; i < this.hourlyCookies.length; i++) {
     let td = document.createElement('td');
     td.textContent = this.hourlyCookies[i];
@@ -50,7 +51,6 @@ Store.prototype.render = function () {
 };
 
 function renderHeader() {
-  let header = document.getElementById('cookie-header');
   for (let i = 0; i < hours.length; i++) {
     let th = document.createElement('th');
     th.textContent = hours[i];
@@ -61,18 +61,32 @@ function renderHeader() {
   header.appendChild(th);
 }
 
-function renderFooter() {
-  let footer = document.getElementById('cookie-footer');
-  for (let i = 0; i < hours.length; i++) {
-    let th = document.createElement('th');
-    th.textContent = '...';
-    footer.appendChild(th);
+// Help from TA Bryant for Lab 7 stretch goal
+function getGrandTotal() {
+  const grandTotal = new Array(hours.length + 1);
+  grandTotal.fill(0);
+  for (let i = 0; i < allStores.length; i++) {
+    for (let j = 0; j < allStores[i].hourlyCookies.length; j++) {
+      grandTotal[j] += allStores[i].hourlyCookies[j];
+      grandTotal[grandTotal.length - 1] += allStores[i].hourlyCookies[j];
+    }
   }
-  let th = document.createElement('th');
-  th.textContent = '1,000,000';
-  footer.appendChild(th);
+  return grandTotal;
 }
 
+function renderFooter() {
+  let grandTotal = getGrandTotal();
+  let tr = document.createElement('tr');
+  let th = document.createElement('th');
+  th.textContent = 'Totals';
+  tr.appendChild(th);
+  for (let i = 0; i < grandTotal.length; i++) {
+    let td = document.createElement('td');
+    td.textContent = grandTotal[i];
+    tr.appendChild(td);
+  }
+  footer.appendChild(tr);
+}
 
 // let nums = [
 //   [1, 2, 3],
