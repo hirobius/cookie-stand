@@ -12,11 +12,6 @@
 </head>
 
 
-<form id="">
-  <fieldset>
-  </fieldset>
-</form>
-
 <body>
   <header>
     <h1>Sales</h1>
@@ -34,13 +29,28 @@
   </header>
 
   <main>
-    <form id="">
+    <form id="table-adder">
       <fieldset>
-        <legend>Lorem</legend>
-        <label>Lorem Ipsum
-          <input type="text" name="">
+        <legend>Table Adder</legend>
+        <br>
+        <label>Store name
+          <input type="text" name="storeName" id="storeName">
         </label>
+
+        <label for="min">Min Customers</label>
+        <input type="number" name="min" id="min">
+        </label>
+
+        <label for="max">Max Customers</label>
+        <input type="number" name="max" id="max">
+
+        <label>Avg Customers
+          <input type="number" name="avg" id="avg">
+        </label>
+
+        </select>
         <button type="submit">Submit</button>
+
       </fieldset>
     </form>
   </main>

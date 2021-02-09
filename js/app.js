@@ -1,10 +1,13 @@
 'use strict';
 
 let header = document.getElementById('cookie-header');
-let footer = document.getElementById('cookie-footer');
 let cookieTable = document.getElementById('cookie-table');
+let footer = document.getElementById('cookie-footer');
+let tableAdder = document.getElementById('table-adder');
+
 let allStores = [];
-const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+
+const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 function Store(name, min, max, avg) {
   this.name = name;
@@ -61,19 +64,6 @@ function renderHeader() {
   header.appendChild(th);
 }
 
-// Help from TA Bryant for Lab 7 stretch goal
-function getGrandTotal() {
-  let grandTotal = new Array(hours.length + 1);
-  grandTotal.fill(0);
-  for (let i = 0; i < allStores.length; i++) {
-    for (let j = 0; j < allStores[i].hourlyCookies.length; j++) {
-      grandTotal[j] += allStores[i].hourlyCookies[j];
-      grandTotal[grandTotal.length - 1] += allStores[i].hourlyCookies[j];
-    }
-  }
-  return grandTotal;
-}
-
 function renderFooter() {
   let grandTotal = getGrandTotal();
   let th = document.createElement('th');
@@ -84,6 +74,30 @@ function renderFooter() {
     td.textContent = grandTotal[i];
     footer.appendChild(td);
   }
+  function getGrandTotal() {
+    let grandTotal = new Array(hours.length + 1);
+    grandTotal.fill(0);
+    for (let i = 0; i < allStores.length; i++) {
+      for (let j = 0; j < allStores[i].hourlyCookies.length; j++) {
+        grandTotal[j] += allStores[i].hourlyCookies[j];
+        grandTotal[grandTotal.length - 1] += allStores[i].hourlyCookies[j];
+      }
+    }
+    return grandTotal;
+  }
+}
+
+function handleSubmit(event){
+  event.preventDefault();
+  let name = event.target.name.value;
+  let min = +event.target.min.value;
+  let max = +event.target.max.value;
+  let avg = +event.target.avg.value;
+  // parseInt() or + symbol changes this from a string to a number
+  let newStore = new Store(name, min, max, avg);
+  newStore.render();
+  footer.removeChild(footer[0]);
+  renderFooter();
 }
 
 let seattle = new Store('Seattle', 23, 65, 6.3);
@@ -99,3 +113,5 @@ dubai.render();
 paris.render();
 lima.render();
 renderFooter();
+
+tableAdder.addEventListener('submit', handleSubmit);

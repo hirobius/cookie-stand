@@ -170,3 +170,35 @@ table th {
   border-radius: 4px;
   width: max-content;
 }
+
+form {
+  margin:auto;
+  border: 2px solid #5c80bcff;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 750;
+  font-weight: 400;
+  color: #5C80BC;
+  background-color: #ffffff;
+  width: 160px;
+  display: block;
+}
+
+input {
+  display: block;
+  margin-bottom: 20px;
+  background-color: #5C80BC;
+  color: #ffffff;
+  border-radius: 6px;
+  height: 20px;
+  padding-left: 6px;
+}
+
+legend {
+  font-size: 125%;
+  font-weight: 700;
+}
+
+
