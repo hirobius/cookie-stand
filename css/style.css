@@ -11,6 +11,7 @@ body {
   width: 960px;
   margin: auto;
   text-align: center;
+  ;
 }
 
 h1 {
@@ -24,7 +25,8 @@ h1 {
 }
 
 header {
-  height: 360px;
+  height: 300px;
+  display: block;
 }
 
 header img {
@@ -172,7 +174,7 @@ table th {
 }
 
 form {
-  margin:auto;
+  margin: auto;
   border: 2px solid #5c80bcff;
   padding: 20px;
   border-radius: 6px;
@@ -200,5 +202,3 @@ legend {
   font-size: 125%;
   font-weight: 700;
 }
-
-

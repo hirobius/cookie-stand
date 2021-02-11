@@ -4,9 +4,7 @@ let header = document.getElementById('cookie-header');
 let cookieTable = document.getElementById('cookie-table');
 let footer = document.getElementById('cookie-footer');
 let tableAdder = document.getElementById('table-adder');
-
 let allStores = [];
-
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 function Store(name, min, max, avg) {
@@ -64,6 +62,19 @@ function renderHeader() {
   header.appendChild(th);
 }
 
+function handleSubmit(event){
+  event.preventDefault();
+  let name = event.target.name.value;
+  // parseInt() or + symbol changes this from a string to a number
+  let min = +event.target.min.value;
+  let max = +event.target.max.value;
+  let avg = +event.target.avg.value;
+  let newStore = new Store(name, min, max, avg);
+  newStore.render();
+  footer.innerHTML='';
+  renderFooter();
+}
+
 function renderFooter() {
   let grandTotal = getGrandTotal();
   let th = document.createElement('th');
@@ -77,7 +88,9 @@ function renderFooter() {
   function getGrandTotal() {
     let grandTotal = new Array(hours.length + 1);
     grandTotal.fill(0);
+    // every store
     for (let i = 0; i < allStores.length; i++) {
+      // every hour
       for (let j = 0; j < allStores[i].hourlyCookies.length; j++) {
         grandTotal[j] += allStores[i].hourlyCookies[j];
         grandTotal[grandTotal.length - 1] += allStores[i].hourlyCookies[j];
@@ -85,19 +98,6 @@ function renderFooter() {
     }
     return grandTotal;
   }
-}
-
-function handleSubmit(event){
-  event.preventDefault();
-  let name = event.target.name.value;
-  let min = +event.target.min.value;
-  let max = +event.target.max.value;
-  let avg = +event.target.avg.value;
-  // parseInt() or + symbol changes this from a string to a number
-  let newStore = new Store(name, min, max, avg);
-  newStore.render();
-  footer.removeChild(footer[0]);
-  renderFooter();
 }
 
 let seattle = new Store('Seattle', 23, 65, 6.3);
